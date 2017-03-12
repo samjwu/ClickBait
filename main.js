@@ -19,24 +19,6 @@ function buyCursor(){
     document.getElementById('cursorCost').innerHTML = nextCost;
 };
 
-function save(){
-	var save = { //variable for save file
-    clicks: clicks,
-    cursors: cursors
-	};
-	localStorage.setItem("save",JSON.stringify(save)); //code to save
-};
-
-function load(){
-	var savegame = JSON.parse(localStorage.getItem("save")); //load a save file
-	if (typeof savegame.clicks !== "undefined") clicks = savegame.clicks; //make sure clicks is defined when loading
-	if (typeof savegame.cursors !== "undefined") cursors = savegame.cursors; //define cursors when loading
-};
-
-function deletesave(){
-	localStorage.removeItem("save") //delete save file
-};
-
 window.setInterval(function(){
 	
 	Clicker(cursors);
